@@ -8,8 +8,12 @@ export default function SearchResults({params}){
     const { loading, gifs} = useGifs({keyword})
     console.log("- renderized")
     return <>
-        {
-            loading ? <Spinner /> : <ListOfGifs gifs={gifs} />
+        {   loading 
+                ? <Spinner /> 
+                : <>
+                    <h3 className="App-title">{keyword}</h3>
+                    <ListOfGifs gifs={gifs} />
+                </>
         }
     </>
     
